@@ -25,10 +25,9 @@ jobs:
         
     - name: Run Bot
       env:
-        # نام متغیرها باید دقیقاً با نام سکرت‌های ثبت شده در گیت‌هاب یکسان باشد
         API_ID: ${{ secrets.API_ID }}
         API_HASH: ${{ secrets.API_HASH }}
-        STRING_SESSION: ${{ secrets.STRING_SESSION }}
+        SESSION_STRING: ${{ secrets.SESSION_STRING }}
         CONFIG_CHANNEL_ID: ${{ secrets.CONFIG_CHANNEL_ID }}
       run: |
         python main.py
