@@ -3,7 +3,7 @@ name: Telegram Self-Bot Runner
 on:
   workflow_dispatch: 
   schedule:
-    - cron: '0 */5 * * *' # اجرای مجدد خودکار هر ۵ ساعت
+    - cron: '0 */5 * * *'
 
 jobs:
   build-and-run:
@@ -25,9 +25,10 @@ jobs:
         
     - name: Run Bot
       env:
+        # نام متغیرها باید دقیقاً با نام سکرت‌های ثبت شده در گیت‌هاب یکسان باشد
         API_ID: ${{ secrets.API_ID }}
         API_HASH: ${{ secrets.API_HASH }}
-        SESSION_STRING: ${{ secrets.SESSION_STRING }}
+        STRING_SESSION: ${{ secrets.STRING_SESSION }}
         CONFIG_CHANNEL_ID: ${{ secrets.CONFIG_CHANNEL_ID }}
       run: |
         python main.py
